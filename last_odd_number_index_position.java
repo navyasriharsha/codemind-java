@@ -1,27 +1,24 @@
 import java.util.Scanner;
-class Arraya2
+class Main
 {
-public static void main(String args[])
-{
-Scanner sc=new Scanner(System.in);
-int x[],i,n;
-n=sc.nextInt();
-x=new int[n];
-
-for(i=0;i<n;i++)
-{
-x[i]=sc.nextInt();
-}
-int even,eei=0;
-for(i=0;i<n;i++)
-{
-    if(x[i]%2!=0)
+    public static void main(String args[])
     {
-    even=x[i];
-    eei=i;
+        Scanner sc=new Scanner(System.in);
+        int l=sc.nextInt();
+        int arr[]=new int[l];
+        int i;
+        for(i=0;i<l;i++)
+        {
+            arr[i]=sc.nextInt();
+            
+        }
+        for(i=l-1;i>=0;i--)
+        {
+            if(arr[i]%2!=0)
+            {
+                System.out.println(i);
+                break;
+            }
+        }
     }
-
-}
-System.out.print(eei);
-}
 }
