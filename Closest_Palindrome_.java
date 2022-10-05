@@ -1,7 +1,7 @@
 import java.util.Scanner;
-class Clase
+class Main
 {
-public static boolean product(int n)
+public static boolean ispalin(int n)
 {
  int sum=0,temp=n,r;
  while(n>0)
@@ -10,44 +10,42 @@ public static boolean product(int n)
  sum=sum*10+r;
  n=n/10;
 }
- if(sum==temp)
+if(temp==sum)
  return true;
  else
-return false;
-
-}
-public static void main(String args[])
-{
- Scanner sc=new Scanner(System.in);
- int n,d1,d2,p1=0,p2=0;
- n=sc.nextInt();
- 
- for( int i=Math.abs(n-1);;i--)
+ return false;
+  }
+   public static void main(String args[])
+  {
+     Scanner sc=new Scanner(System.in);
+	 int n,i,d1=0,d2=0;
+         n=sc.nextInt();
+         
+	 for(i=(n-1);;i--)
 	 {
-	     if(product(i))
+	     if(ispalin(i))
 		 {
 		   d1=i;
                    break;
 		 }
 	 } 
-	for(int j=(n+1);;j++)
+	for(i=n+1;;i++)
 	 {
-	     if(product(j))
+	     if(ispalin(i))
 		 {
-		   d2=j;
+		   d2=i;
                    break;
 		 }
 	 } 
-       p1=Math.abs(n-d1);
-       
-       p2=d2-n;
-
-        if((p1)<(p2))
+        if((n-d1)<(d2-n))
             System.out.println(d1);
-       else if(p1==p2)
+        else if((n-d1)==(d2-n))
+        {
             System.out.println(d1+" "+d2);
-	    else
-	    System.out.println(d2);
+        }
+        else
+            System.out.println(d2);
+	 
   }
-
+  
 }
